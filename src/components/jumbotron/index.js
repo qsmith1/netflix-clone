@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/jsx-props-no-spreading */
+import React from 'react';
 import {
   Item,
   Inner,
@@ -7,9 +8,9 @@ import {
   SubTitle,
   Image,
   Pane,
-} from "./styles/jumbotron";
+} from './styles/jumbotron';
 
-function Jumbotron({ children, direction = "row", ...restProps }) {
+function Jumbotron({ children, direction = 'row', ...restProps }) {
   return (
     <Item {...restProps}>
       <Inner direction={direction}>{children}</Inner>
