@@ -40,14 +40,14 @@ Jumbotron.Image = function JumbotronImage({ src, alt }) {
 };
 
 Jumbotron.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   direction: PropTypes.string,
 };
 
-Jumbotron.Container.propTypes = { children: PropTypes.element.isRequired };
+Jumbotron.Container.propTypes = { children: PropTypes.node.isRequired };
 Jumbotron.Title.propTypes = { children: PropTypes.string.isRequired };
 Jumbotron.SubTitle.propTypes = { children: PropTypes.string.isRequired };
-Jumbotron.Pane.propTypes = { children: PropTypes.element.isRequired };
+Jumbotron.Pane.propTypes = { children: PropTypes.node.isRequired };
 Jumbotron.Image.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string,

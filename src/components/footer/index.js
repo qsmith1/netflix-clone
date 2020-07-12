@@ -20,8 +20,8 @@ Footer.Row = function FooterRow({ children }) {
 Footer.Column = function FooterColumn({ children }) {
   return <Column>{children}</Column>;
 };
-Footer.Link = function FooterLink({ url, children }) {
-  return <Link href={url}>{children}</Link>;
+Footer.Link = function FooterLink({ href, children }) {
+  return <Link href={href}>{children}</Link>;
 };
 Footer.Title = function FooterTitle({ children }) {
   return <Title>{children}</Title>;
@@ -34,17 +34,17 @@ Footer.Break = function FooterBreak() {
 };
 
 Footer.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 Footer.Row.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 Footer.Column.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 Footer.Link.propTypes = {
-  children: PropTypes.element.isRequired,
-  url: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  href: PropTypes.string.isRequired,
 };
 Footer.Title.propTypes = {
   children: PropTypes.string.isRequired,
