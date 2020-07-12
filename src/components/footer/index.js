@@ -1,7 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Container, Row, Column, Link, Title, Break,
+  Container,
+  Row,
+  Column,
+  Link,
+  Title,
+  Break,
+  Text,
 } from './styles/footer';
 
 export default function Footer({ children }) {
@@ -14,11 +20,14 @@ Footer.Row = function FooterRow({ children }) {
 Footer.Column = function FooterColumn({ children }) {
   return <Column>{children}</Column>;
 };
-Footer.Link = function FooterLink({ url, text }) {
-  return <Link href={url}>{text}</Link>;
+Footer.Link = function FooterLink({ url, children }) {
+  return <Link href={url}>{children}</Link>;
 };
-Footer.Title = function FooterTitle({ text }) {
-  return <Title>{text}</Title>;
+Footer.Title = function FooterTitle({ children }) {
+  return <Title>{children}</Title>;
+};
+Footer.Text = function FooterText({ children }) {
+  return <Text>{children}</Text>;
 };
 Footer.Break = function FooterBreak() {
   return <Break />;
@@ -34,9 +43,12 @@ Footer.Column.propTypes = {
   children: PropTypes.element.isRequired,
 };
 Footer.Link.propTypes = {
-  text: PropTypes.element.isRequired,
+  children: PropTypes.element.isRequired,
   url: PropTypes.string.isRequired,
 };
 Footer.Title.propTypes = {
-  text: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
+};
+Footer.Text.propTypes = {
+  children: PropTypes.string.isRequired,
 };

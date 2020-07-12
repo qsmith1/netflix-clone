@@ -10,6 +10,8 @@ export const Column = styled.div``;
 
 export const Link = styled.a``;
 
-export const Title = styled.h2``;
+export const Title = styled.p``;
+
+export const Text = styled.p``;
 
 export const Break = styled.hr``;
