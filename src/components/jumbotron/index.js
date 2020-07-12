@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Item,
   Inner,
@@ -34,8 +35,22 @@ Jumbotron.Pane = function JumbotronPane({ children, ...restProps }) {
   return <Pane {...restProps}>{children}</Pane>;
 };
 
-Jumbotron.Image = function JumbotronImage({ ...restProps }) {
-  return <Image {...restProps} />;
+Jumbotron.Image = function JumbotronImage({image, alt }) {
+  return <Image src={image} alt={alt} />;
 };
 
 export default Jumbotron;
+
+Jumbotron.propTypes = {
+  children: PropTypes.element.isRequired,
+  direction: PropTypes.string
+}
+
+Jumbotron.Container.propTypes = { children: PropTypes.element.isRequired }
+Jumbotron.Title.propTypes = {children: PropTypes.string.isRequired}
+Jumbotron.SubTitle.propTypes = {children: PropTypes.string.isRequired}
+Jumbotron.Pane.propTypes = {children: PropTypes.element.isRequired}
+Jumbotron.Image.propTypes = {image: PropTypes.string.isRequired, alt: PropTypes.string}
+
+Jumbotron.defaultProps = { direction: "row" }
+Jumbotron.Image.defaultProps = { alt: "" }
