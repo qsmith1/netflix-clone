@@ -11,7 +11,7 @@ import {
   Pane,
 } from './styles/jumbotron';
 
-function Jumbotron({ children, direction = 'row', ...restProps }) {
+export default function Jumbotron({ children, direction, ...restProps }) {
   return (
     <Item {...restProps}>
       <Inner direction={direction}>{children}</Inner>
@@ -35,11 +35,9 @@ Jumbotron.Pane = function JumbotronPane({ children, ...restProps }) {
   return <Pane {...restProps}>{children}</Pane>;
 };
 
-Jumbotron.Image = function JumbotronImage({image, alt }) {
-  return <Image src={image} alt={alt} />;
+Jumbotron.Image = function JumbotronImage({ src, alt }) {
+  return <Image src={src} alt={alt} />;
 };
-
-export default Jumbotron;
 
 Jumbotron.propTypes = {
   children: PropTypes.element.isRequired,
@@ -50,7 +48,7 @@ Jumbotron.Container.propTypes = { children: PropTypes.element.isRequired }
 Jumbotron.Title.propTypes = {children: PropTypes.string.isRequired}
 Jumbotron.SubTitle.propTypes = {children: PropTypes.string.isRequired}
 Jumbotron.Pane.propTypes = {children: PropTypes.element.isRequired}
-Jumbotron.Image.propTypes = {image: PropTypes.string.isRequired, alt: PropTypes.string}
+Jumbotron.Image.propTypes = {src: PropTypes.string.isRequired, alt: PropTypes.string}
 
 Jumbotron.defaultProps = { direction: "row" }
 Jumbotron.Image.defaultProps = { alt: "" }
