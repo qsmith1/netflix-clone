@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Container, Inner, Title, Header, Body,
+  Container,
+  Inner,
+  Item,
+  Title,
+  Header,
+  Body,
 } from './styles/accordion';
 
 export default function Accordion({ children }) {
@@ -11,6 +16,10 @@ export default function Accordion({ children }) {
     </Container>
   );
 }
+
+Accordion.Item = function AccordionItem({ children }) {
+  return <Item>{children}</Item>;
+};
 
 Accordion.Title = function AccordionTitle({ children }) {
   return <Title>{children}</Title>;
@@ -27,12 +36,15 @@ Accordion.Body = function AccordionBody({ children }) {
 Accordion.propTypes = {
   children: PropTypes.node.isRequired,
 };
+Accordion.Item.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 Accordion.Title.propTypes = {
   children: PropTypes.string.isRequired,
 };
 Accordion.Body.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.string.isRequired,
 };
 Accordion.Header.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.string.isRequired,
 };
