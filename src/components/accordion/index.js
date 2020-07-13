@@ -7,6 +7,7 @@ import {
   Title,
   Header,
   Body,
+  Frame,
 } from './styles/accordion';
 
 export default function Accordion({ children }) {
@@ -16,6 +17,10 @@ export default function Accordion({ children }) {
     </Container>
   );
 }
+
+Accordion.Frame = function AccordionFrame({ children }) {
+  return <Frame>{children}</Frame>;
+};
 
 Accordion.Item = function AccordionItem({ children }) {
   return <Item>{children}</Item>;
@@ -37,6 +42,9 @@ Accordion.propTypes = {
   children: PropTypes.node.isRequired,
 };
 Accordion.Item.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+Accordion.Frame.propTypes = {
   children: PropTypes.node.isRequired,
 };
 Accordion.Title.propTypes = {
